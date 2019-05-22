@@ -1,0 +1,49 @@
+homeassistant:
+  name: Aptiv
+  latitude: 31.326
+  longitude: 121.602273
+  elevation: 0
+  unit_system: imperial
+  time_zone: Asia/Shanghai
+  customize: !include customize.yaml
+default_config: 
+discovery: 
+tts:
+  - platform: google_translate
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+redpoint: 
+sun: 
+media_player:
+  - platform: vlc
+    name: vlc_speaker
+sensor:
+  - platform: HeWeather
+    city: shanghai
+    appkey: 1697fec8cff949c49b38e909147b5f56
+    options:
+      - pop
+      - tmp_min
+      - tmp_max
+      - wind_dir
+      - uv
+      - trav
+      - flu
+      - drsg
+      - cw
+      - comf
+      - pm25
+      - pm10
+      - qlty
+      - main
+      - aqi
+      - wind_sc
+      - vis
+      - pres
+      - pcpn
+      - hum
+      - wind_spd
+      - cond_txt
+      - tmp
+      - fl
