@@ -36,3 +36,6 @@ frontend:
     - /local/custom_ui/state-card-custom-ui-es5.html
 ```
 
+
+
+详情请见：http://rangerzhou.top/2019/06/03/HASS-Xiaomi-Airpurifier-integrate/
