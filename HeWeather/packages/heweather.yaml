@@ -1,7 +1,7 @@
 sensor:
   - platform: heweather
     city: shanghai
-    appkey: 905195741bfe46e9de5743627c7f781d
+    appkey: 905195***************3627c7f781d
     options:
       - temprature
       - humidity
