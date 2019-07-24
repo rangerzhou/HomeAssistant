@@ -1,0 +1,44 @@
+{
+    "data": {
+        "entities": [
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "person.aptiv",
+                "name": null,
+                "platform": "person",
+                "unique_id": "6f302bff4e9b459ea0489fccd18eeca5"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "fan.xiaomi_air_purifier_2",
+                "name": null,
+                "platform": "xiaomi_miio",
+                "unique_id": "zhimi.airpurifier.m2-34:CE:00:BF:8A:0A"
+            },
+            {
+                "config_entry_id": "5bd505ac266649499289a385edc07f11",
+                "device_id": "810b6611dc1c4123b99911d689804130",
+                "disabled_by": null,
+                "entity_id": "sensor.aptivctcadp_battery_state",
+                "name": null,
+                "platform": "ios",
+                "unique_id": "state_aptivctcadp"
+            },
+            {
+                "config_entry_id": "5bd505ac266649499289a385edc07f11",
+                "device_id": "810b6611dc1c4123b99911d689804130",
+                "disabled_by": null,
+                "entity_id": "sensor.aptivctcadp_battery_level",
+                "name": null,
+                "platform": "ios",
+                "unique_id": "level_aptivctcadp"
+            }
+        ]
+    },
+    "key": "core.entity_registry",
+    "version": 1
+}

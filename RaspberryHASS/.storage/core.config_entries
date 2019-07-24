@@ -1,0 +1,18 @@
+{
+    "data": {
+        "entries": [
+            {
+                "connection_class": "cloud_push",
+                "data": {},
+                "domain": "ios",
+                "entry_id": "5bd505ac266649499289a385edc07f11",
+                "options": {},
+                "source": "import",
+                "title": "Home Assistant iOS",
+                "version": 1
+            }
+        ]
+    },
+    "key": "core.config_entries",
+    "version": 1
+}

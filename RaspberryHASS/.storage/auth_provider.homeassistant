@@ -1,0 +1,12 @@
+{
+    "data": {
+        "users": [
+            {
+                "password": "JDJiJDEyJHZqZFhpL0xzMzJvc1ZLa0dwd3ZQVGV6LnY3bmVQNm83YmRsZ2UwcUdqY0w3L3BvR2pkdjFX",
+                "username": "aptiv"
+            }
+        ]
+    },
+    "key": "auth_provider.homeassistant",
+    "version": 1
+}

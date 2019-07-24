@@ -1,0 +1,37 @@
+sensor.s_gg_613_odometer:
+  friendly_name: 奔驰
+  tmall_genie:
+    enabled: true
+    attach_sensor:
+      - entity_id: sensor.s_gg_613_tire_pressure_front_left
+
+device_tracker.6de25c138cece3b10b:
+  hagenie_zone: 洗手间
+  hagenie_deviceName: 扫地机器人
+  hagenie_deviceType: fan
+  friendly_name: 车车
+
+fan.xiaomi_air_purifier_2:
+  hagenie_zone: 吧台
+  hagenie_deviceName: 空气净化器
+  hagenie_deviceType: airpurifier
+  friendly_name: 小米空气净化器
+
+sensor.s_gg_613_door_lock_front_left:
+  hagenie_zone: 车库
+  hagenie_deviceName: 动感单车
+  hagenie_deviceType: sensor
+  friendly_name: 前左门锁
+
+sensor.s_gg_613_door_lock_front_right:
+  hagenie_zone: 休息室
+  hagenie_deviceName: 美容仪
+  hagenie_deviceType: sensor
+  friendly_name: 前右门锁
+
+weather.shang_hai_tian_qi:
+  hagenie_zone: 书房
+  hagenie_deviceName: 空气检测器
+  hagenie_deviceType: sensor
+  friendly_name: weather
+  

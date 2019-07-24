@@ -1,0 +1,400 @@
+{
+    "data": {
+        "config": {
+            "cch": {
+                "all_buttons_color": "white",
+                "all_tabs_color": "red",
+                "button_color": {
+                    "menu": "rgb(255,255,255)"
+                },
+                "disable": true,
+                "notify_indicator_color": "brown",
+                "notify_text_color": "red",
+                "swipe": true,
+                "tab_indicator_color": "red"
+            },
+            "resources": [
+                {
+                    "type": "module",
+                    "url": "/local/custom-lovelace/hf_weather-card/hf_weather-card.js"
+                },
+                {
+                    "type": "module",
+                    "url": "/local/custom-lovelace/hf_weather-card/hf_weather-more-info.js"
+                },
+                {
+                    "type": "module",
+                    "url": "/local/custom-lovelace/compact-custom-header/compact-custom-header.js?v=0.0.1"
+                },
+                {
+                    "type": "module",
+                    "url": "/community_plugin/compact-custom-header/compact-custom-header.js"
+                },
+                {
+                    "type": "js",
+                    "url": "/community_plugin/lovelace-swipe-navigation/swipe-navigation.js"
+                }
+            ],
+            "swipe_nav": {
+                "animate": "swipe",
+                "prevent_default": true,
+                "skip_tabs": "5,6,7,8",
+                "swipe_amount": 30,
+                "wrap": false
+            },
+            "title": "Car Assistant",
+            "views": [
+                {
+                    "badges": [
+                        "person.aptiv",
+                        "sun.sun"
+                    ],
+                    "cards": [
+                        {
+                            "entities": [
+                                {
+                                    "entity": "fan.xiaomi_air_purifier_2"
+                                },
+                                {
+                                    "entity": "switch.xiaomi_ap_buzzer"
+                                },
+                                {
+                                    "entity": "sensor.xiaomi_ap_aqi"
+                                },
+                                {
+                                    "entity": "sensor.xiaomi_ap_temp"
+                                },
+                                {
+                                    "entity": "sensor.xiaomi_ap_humid"
+                                },
+                                {
+                                    "entity": "sensor.xiaomi_ap_filter_used"
+                                },
+                                {
+                                    "entity": "sensor.xiaomi_ap_filter_life"
+                                },
+                                {
+                                    "entity": "input_select.xiaomi_ap_mode"
+                                },
+                                {
+                                    "entity": "input_select.xiaomi_ap_led"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "\u5c0f\u7c73\u7a7a\u51c0",
+                            "type": "entities"
+                        },
+                        {
+                            "entity": "weather.hefengweather",
+                            "icons": "/local/custom-lovelace/hf_weather-card/icons/animated/",
+                            "title": "\u548c\u98ce\u5929\u6c14",
+                            "type": "custom:hf_weather-card"
+                        },
+                        {
+                            "entity": "weather.hefengweather",
+                            "type": "weather-forecast"
+                        }
+                    ],
+                    "icon": "mdi:home",
+                    "path": "default_view",
+                    "title": "Home"
+                },
+                {
+                    "badges": [],
+                    "cards": [
+                        {
+                            "hold_action": {
+                                "action": "none"
+                            },
+                            "image": "/local/benz.jpg",
+                            "tap_action": {
+                                "action": "none"
+                            },
+                            "type": "picture"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "sensor.s_gg_613_licenseplate",
+                                    "icon": "mdi:car",
+                                    "name": "License plate"
+                                },
+                                {
+                                    "entity": "sensor.s_gg_613_odometer",
+                                    "icon": "mdi:speedometer",
+                                    "name": "Odometer"
+                                },
+                                {
+                                    "entity": "sensor.s_gg_613_distance_since_reset",
+                                    "icon": "mdi:backup-restore",
+                                    "name": "Distance since reset"
+                                },
+                                {
+                                    "entity": "sensor.s_gg_613_distance_since_start",
+                                    "icon": "mdi:arrow-right-bold-circle-outline",
+                                    "name": "Distance since start"
+                                },
+                                {
+                                    "entity": "sensor.s_gg_613_fuel_level"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Information",
+                            "type": "entities"
+                        },
+                        {
+                            "default_zoom": 15,
+                            "entities": [
+                                {
+                                    "entity": "device_tracker.6de25c138cece3b10b"
+                                },
+                                {
+                                    "entity": "zone.aptiv_ctc"
+                                }
+                            ],
+                            "title": "Position",
+                            "type": "map"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "sensor.s_gg_613_door_front_left",
+                                    "icon": "mdi:car-door",
+                                    "name": "Front left door"
+                                },
+                                {
+                                    "entity": "sensor.s_gg_613_door_front_right",
+                                    "icon": "mdi:car-door",
+                                    "name": "Front right door"
+                                },
+                                {
+                                    "entity": "sensor.s_gg_613_door_rear_left",
+                                    "icon": "mdi:car-door",
+                                    "name": "Rear left door"
+                                },
+                                {
+                                    "entity": "sensor.s_gg_613_door_rear_right",
+                                    "icon": "mdi:car-door",
+                                    "name": "Rear right door"
+                                },
+                                {
+                                    "type": "divider"
+                                },
+                                {
+                                    "entity": "sensor.s_gg_613_door_lock_front_left",
+                                    "name": "Front left door lock"
+                                },
+                                {
+                                    "entity": "sensor.s_gg_613_door_lock_front_right",
+                                    "name": "Front right door lock"
+                                },
+                                {
+                                    "entity": "sensor.s_gg_613_door_lock_front_left_2",
+                                    "name": "Rear left door lock"
+                                },
+                                {
+                                    "entity": "sensor.s_gg_613_door_lock_front_right_2",
+                                    "name": "Rear right door lock"
+                                },
+                                {
+                                    "type": "divider"
+                                },
+                                {
+                                    "entity": "sensor.s_gg_613_door_lock_decklid",
+                                    "name": "Decklid lock"
+                                },
+                                {
+                                    "entity": "sensor.s_gg_613_door_lock_vehicle"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Doors",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "sensor.s_gg_613_tire_pressure_front_left",
+                                    "icon": "mdi:car-tire-alert",
+                                    "name": "Front left pressure"
+                                },
+                                {
+                                    "entity": "sensor.s_gg_613_tire_pressure_front_right",
+                                    "icon": "mdi:car-tire-alert",
+                                    "name": "Front right pressure"
+                                },
+                                {
+                                    "entity": "sensor.s_gg_613_tire_pressure_rear_right",
+                                    "icon": "mdi:car-tire-alert",
+                                    "name": "Rear left pressure"
+                                },
+                                {
+                                    "entity": "sensor.s_gg_613_tire_pressure_rear_left",
+                                    "icon": "mdi:car-tire-alert",
+                                    "name": "Rear right pressure"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Tire pressure",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "automation.airpurifier_on"
+                                },
+                                {
+                                    "entity": "automation.airpurifier_off"
+                                },
+                                {
+                                    "entity": "automation.tire_pressures"
+                                }
+                            ],
+                            "show_header_toggle": true,
+                            "title": "Automations",
+                            "type": "entities"
+                        }
+                    ],
+                    "icon": "mdi:car",
+                    "title": "Vehicle"
+                },
+                {
+                    "badges": [],
+                    "cards": [
+                        {
+                            "entities": [
+                                {
+                                    "entity": "sensor.command_sensor",
+                                    "name": "HA Release"
+                                },
+                                {
+                                    "entity": "sensor.last_boot"
+                                },
+                                {
+                                    "entity": "sensor.load_1m"
+                                },
+                                {
+                                    "entity": "sensor.load_5m"
+                                },
+                                {
+                                    "entity": "sensor.load_15m"
+                                },
+                                {
+                                    "entity": "sensor.memory_free"
+                                },
+                                {
+                                    "entity": "sensor.memory_use"
+                                },
+                                {
+                                    "entity": "sensor.memory_use_percent"
+                                },
+                                {
+                                    "entity": "sensor.processor_use"
+                                },
+                                {
+                                    "entity": "sensor.swap_use_percent"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "DeviceInfo",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "sensor.walking_to_aptiv"
+                                },
+                                {
+                                    "entity": "sensor.bicycling_to_aptiv"
+                                },
+                                {
+                                    "entity": "sensor.driving_to_aptiv"
+                                },
+                                {
+                                    "entity": "sensor.driving_to_home"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Gaode Nav",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "media_player.mpd"
+                                }
+                            ],
+                            "type": "entities"
+                        },
+                        {
+                            "camera_view": "live",
+                            "entity": "camera.aptivcamera",
+                            "type": "picture-entity"
+                        }
+                    ],
+                    "icon": "mdi:information",
+                    "title": "DeviceInfo"
+                },
+                {
+                    "badges": [],
+                    "cards": [
+                        {
+                            "entities": [
+                                {
+                                    "entity": "device_tracker.6de25c138cece3b10b",
+                                    "icon": "mdi:car"
+                                },
+                                {
+                                    "entity": "device_tracker.xiao_ge_ge_de_6x",
+                                    "icon": "mdi:cellphone"
+                                },
+                                {
+                                    "entity": "device_tracker.adpxiao_ge_ge",
+                                    "icon": "mdi:cellphone"
+                                },
+                                {
+                                    "entity": "device_tracker.aptivctcadp",
+                                    "icon": "mdi:cellphone-iphone",
+                                    "name": "iPhone8"
+                                },
+                                {
+                                    "entity": "group.all_devices"
+                                }
+                            ],
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "automation.airpurifier_on"
+                                },
+                                {
+                                    "entity": "automation.airpurifier_off"
+                                },
+                                {
+                                    "entity": "automation.tire_pressures"
+                                },
+                                {
+                                    "entity": "automation.he_feng_tian_qi_yu_bao"
+                                }
+                            ],
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "group.all_automations"
+                                }
+                            ],
+                            "type": "entities"
+                        }
+                    ],
+                    "icon": "mdi:toggle-switch",
+                    "title": "Devices"
+                }
+            ]
+        }
+    },
+    "key": "lovelace",
+    "version": 1
+}

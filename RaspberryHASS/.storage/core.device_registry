@@ -1,0 +1,28 @@
+{
+    "data": {
+        "devices": [
+            {
+                "area_id": "34ed8689ad6d4076a5993e9b353e7e0b",
+                "config_entries": [
+                    "5bd505ac266649499289a385edc07f11"
+                ],
+                "connections": [],
+                "hub_device_id": null,
+                "id": "810b6611dc1c4123b99911d689804130",
+                "identifiers": [
+                    [
+                        "ios",
+                        "558434F5-98A0-406A-AC33-5C5A572C4E1C"
+                    ]
+                ],
+                "manufacturer": "Apple",
+                "model": "iPhone 8",
+                "name": "aptivctcadp",
+                "name_by_user": null,
+                "sw_version": "12.3.1"
+            }
+        ]
+    },
+    "key": "core.device_registry",
+    "version": 1
+}

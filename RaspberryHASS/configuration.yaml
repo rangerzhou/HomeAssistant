@@ -1,0 +1,117 @@
+homeassistant:
+  name: CarAssistantDemo
+  latitude: 31.326
+  longitude: 121.602273
+  elevation: 0
+  unit_system: metric
+  time_zone: Asia/Shanghai
+  customize: !include customize.yaml
+  packages: !include_dir_named packages
+  customize_glob:
+    '*.*':
+      custom_ui_state_card: state-card-custom-ui
+#default_config: 
+discovery: 
+tts:
+  - platform: google_translate
+    language: zh-cn
+  - platform: baidu
+    app_id: 16416766
+    api_key: 385WZxnQaq4cGeQCdWave48a
+    secret_key: N13lerEfkC5m8DGd14OUeGgEOyReldzx
+    volume: 10
+media_player:
+#  - platform: vlc
+#  - platform: tts_bluetooth_speaker
+#    address: 38:D2:CA:92:F8:BD
+  - platform: mpd
+    host: 127.0.0.1
+#introduction_hachina: 
+#tunnel2local:
+#  frpc_bin: /home/pi/bin/frpc
+redpoint:
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+zone: !include zones.yaml
+sensor: !include sensors.yaml
+frontend:
+  extra_html_url:
+    - /local/custom_ui/state-card-custom-ui.html
+  extra_html_url_es5:
+    - /local/custom_ui/state-card-custom-ui-es5.html
+panel_iframe:
+  configurator:
+    title: Configurator
+    icon: 'mdi:wrench'
+    url: 'http://192.168.8.188:3218'
+  materialdesignicons:
+    title: Icons
+    icon: 'mdi:material-ui'
+    url: 'https://cdn.materialdesignicons.com/3.6.95/'
+device_tracker:
+  - platform: bluetooth_tracker
+    interval_seconds: 30
+    consider_home: 90
+    new_device_defaults:
+      track_new_devices: false
+#  - platform: icloud
+#    username: junpeng.lv@delphi.com
+#    password: Aptiv123456789
+#    account_name: iPhone 8
+weather:
+  - platform: darksky
+    api_key: 247d5cbd3ad7c67d8872b0d1b93f900c
+    name: 上海天气
+  - platform: hf_weather
+    name: hefengWeather
+    city: shanghai
+    appkey: 905195741bfe46e9de5743627c7f781d
+mercedesmebeta:
+  client_id: 79f7f185-ccba-416f-92fc-5a891c6021ca
+  client_secret: da820387-9fd7-4def-9c0e-9c954b8ae089
+  cache_path: ~/homeassistant
+http:
+  base_url: 'http://raspberrypi.local:8123'
+notify:
+  - name: PUSHOVER
+    platform: pushover
+    api_key: adk7ymwqgfhdoh72s863zqpuf36jyf
+    user_key: uudbak9t9cbiyv9xa2ck728omve4dp
+  - name: twilio_sms
+    platform: twilio_sms
+    from_number: +12013319584
+
+twilio:
+  account_sid: AC3af695fb2998f83cf2a378e70cc41de3
+  auth_token: 6751067e8554cfd2e72c55ff1fe10809
+#ios:
+api:
+logger:
+  default: info
+
+aligenie:
+  expire_hours: 8760
+
+#audiconnect:
+#  username: 11852134@audi-online.cn
+#  password: Aptiv123456
+#  region: China
+#  scan_interval:
+#      minutes: 2
+system_health:
+#history:
+#logbook:
+#recorder:
+#cloud:
+hacs:
+  token: 4b98c80dc1d725f5f35faf5960b8e58185d1ac3b
+ffmpeg:
+  ffmpeg_bin: '/usr/bin/ffmpeg'
+
+camera:
+  - platform: ffmpeg
+    name: aptivCamera
+    input: rtsp://192.168.8.113:8554/123456
+shell_command:
+  push_notification: /usr/bin/python3.7 /home/pi/homeassistant/www/client.py {{message}}

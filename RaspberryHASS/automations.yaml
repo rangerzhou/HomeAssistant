@@ -1,0 +1,122 @@
+- id: '1559616052351'
+  alias: AirPurifier On
+  trigger:
+  - entity_id: device_tracker.6de25c138cece3b10b
+    event: enter
+    platform: zone
+    zone: zone.aptiv_ctc
+  condition: []
+  action:
+  - service: fan.turn_on
+    data:
+      entity_id: fan.xiaomi_air_purifier_2
+      speed: Auto
+  - service: notify.ios_aptivctcadp
+    data:
+      message: 空气净化器打开啦
+  - service: notify.twilio_sms
+    data:
+      message: '已为您打开空气净化器'
+      target:
+        - '+8613611675757'
+        - '+8618616662572'
+  - service: notify.pushover
+    data:
+      message: 已为您打开空气净化器
+  - service: tts.baidu_say
+    data:
+      message: 空气净化器已开启
+  - service: shell_command.push_notification
+    data_template:
+      message: '空气净化器已开启'
+- id: '1559620623531'
+  alias: AirPurifier Off
+  trigger:
+  - entity_id: device_tracker.6de25c138cece3b10b
+    event: leave
+    platform: zone
+    zone: zone.aptiv_ctc
+  condition: []
+  action:
+  - service: fan.turn_off
+    data:
+      entity_id: fan.xiaomi_air_purifier_2
+  - service: notify.ios_aptivctcadp
+    data:
+      message: 空气净化器关闭啦
+  - service: notify.twilio_sms
+    data:
+      message: '已为您关闭空气净化器'
+      target:
+        - '+8613611675757'
+        - '+8618616662572'
+  - service: notify.pushover
+    data:
+      message: 已为您关闭空气净化器
+  - service: tts.baidu_say
+    data:
+      message: 空气净化器已关闭
+  - service: shell_command.push_notification
+    data_template:
+      message: '空气净化器已关闭'
+- id: '1559637238297'
+  alias: Tire Pressures
+  trigger:
+  - below: '180'
+    entity_id: sensor.s_gg_613_tire_pressure_front_left
+    platform: numeric_state
+  - below: '180'
+    entity_id: sensor.s_gg_613_tire_pressure_front_right
+    platform: numeric_state
+  - below: '180'
+    entity_id: sensor.s_gg_613_tire_pressure_rear_left
+    platform: numeric_state
+  - below: '180'
+    entity_id: sensor.s_gg_613_tire_pressure_rear_right
+    platform: numeric_state
+  condition: []
+  action:
+  - service: notify.ios_aptivctcadp
+    data:
+      message: Tire pressure is low
+  - service: notify.pushover
+    data:
+      message: 轮胎店
+  - service: notify.twilio_sms
+    data:
+      message: '胎压低于180，为了您的安全请及时充气'
+      target:
+        - '+8613611675757'
+        - '+8618616662572'
+  - service: tts.baidu_say
+    data:
+      message: 胎压低于180，为了您的安全请及时充气
+  - service: shell_command.push_notification
+    data_template:
+      message: '轮胎店'
+
+- id: 'HeWeather'
+  alias: 和风天气预报
+  trigger:
+  - platform: time
+    at: '08:40'
+  condition: []
+  action:
+  - service: tts.baidu_say
+    data_template:
+       message: '温度{{ states.weather.hefengweather.attributes["temperature"]}}摄氏度, 湿度{{states.weather.hefengweather.attributes["humidity"]}}%, 风速{{states.weather.hefengweather.attributes["wind_speed"]}}m/s, 祝您生活愉快'
+   
+- id: 'Device state reminder'
+  alias: 设备状态提醒
+  trigger:
+  - entity_id: person.aptiv
+    platform: state
+    to: 'inCar'
+  condition:
+  - entity_id: fan.xiaomi_air_purifier_2
+    condition: state
+    state: 'on'
+  action:
+  - service: tts.baidu_say
+    data_template:
+      message: '{{ states.fan.xiaomi_air_purifier_2.attributes["friendly_name"] }} 未关闭，是否需要关闭'

@@ -1,0 +1,12 @@
+{
+    "data": {
+        "alexa_enabled": true,
+        "cloud_user": "ca57f6352ec7414ba9704b4c977812cd",
+        "cloudhooks": {},
+        "google_enabled": true,
+        "google_secure_devices_pin": null,
+        "remote_enabled": false
+    },
+    "key": "cloud",
+    "version": 1
+}

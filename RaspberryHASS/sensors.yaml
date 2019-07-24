@@ -1,0 +1,83 @@
+# Weather prediction
+#- platform: yr
+  #- platform: bitcoin
+  #display_options:
+  #  - exchangerate
+  #  - trade_volume_btc
+# gaode_travel_time
+- platform: gaode_travel_time
+  api_key: 2eec41586a85b251d7e872c536ef41e2
+  name: Walking to Aptiv
+  friendly_name: 步行去公司
+  travel_mode: walking
+  strategy: 0       # 当travel_mode是driving时有效，支持0-9, 缺省为0（代表选择最快路径）
+  origin:
+    #longitude_latitude: 116.481028,39.989643
+    city: 上海
+    address: 花园石桥路28弄
+  destination:
+    #longitude_latitude: 121.3997,31.0456
+    city: 上海
+    address: 德林路118号
+- platform: gaode_travel_time
+  api_key: 2eec41586a85b251d7e872c536ef41e2
+  name: Bicycling to Aptiv
+  friendly_name: 骑车去公司
+  travel_mode: bicycling
+  strategy: 0       # 当travel_mode是driving时有效，支持0-9, 缺省为0（代表选择最快路径）
+  origin:
+    #longitude_latitude: 116.481028,39.989643
+    city: 上海
+    address: 花园石桥路28弄
+  destination:
+    #longitude_latitude: 121.3997,31.0456
+    city: 上海
+    address: 德林路118号
+- platform: gaode_travel_time
+  api_key: 2eec41586a85b251d7e872c536ef41e2
+  name: Driving to Aptiv
+  friendly_name: 开车去公司
+  travel_mode: driving
+  strategy: 0       # 当travel_mode是driving时有效，支持0-9, 缺省为0（代表选择最快路径）
+  origin:
+    #longitude_latitude: 116.481028,39.989643
+    city: 上海
+    address: 花园石桥路28弄
+  destination:
+    #longitude_latitude: 121.3997,31.0456
+    city: 上海
+    address: 德林路118号
+- platform: gaode_travel_time
+  api_key: 2eec41586a85b251d7e872c536ef41e2
+  name: Driving to Home
+  friendly_name: 开车回家
+  travel_mode: driving
+  strategy: 0       # 当travel_mode是driving时有效，支持0-9, 缺省为0（代表选择最快路径）
+  origin:
+    #longitude_latitude: 116.481028,39.989643
+    city: 上海
+    address: 德林路118号
+  destination:
+    #longitude_latitude: 121.3997,31.0456
+    city: 上海
+    address: 花园石桥路28弄
+
+# System monitor
+- platform: systemmonitor
+  resources:
+    - type: memory_use_percent
+    - type: memory_use
+    - type: memory_free
+    - type: swap_use_percent
+    - type: load_1m
+    - type: load_5m
+    - type: load_15m
+    - type: processor_use
+    - type: last_boot
+
+# HA Release
+- platform: command_line
+  command: >-
+    python3 -c "import requests;
+    print(requests.get('https://pypi.python.org/pypi/homeassistant/json').json()['info']['version'])"
+    name: HA Release
