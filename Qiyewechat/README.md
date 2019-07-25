@@ -5,7 +5,7 @@
 ### 配置 configurations.yaml
 
 ``` yaml
-  - platform: Qiyeweichat
+  - platform: Qiyewechat
     name: wechatnotify 			# 用于生成服务实体 ID, 比如这个出来就是 notify.wechatnotify
     corpid: wwa41ea8577b1540de 	# 这个是企业微信的企业 id
     agentId: 1000002 			# 这个是企业微信里面新建应用的应用 id
