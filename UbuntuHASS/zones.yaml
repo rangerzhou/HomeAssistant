@@ -1,0 +1,17 @@
+- name: Home
+  latitude: 31.296112
+  longitude: 121.465240
+  radius: 1000
+  icon: mdi:account-multiple
+
+- name: AptivCTC
+  latitude: 31.326
+  longitude: 121.602273
+  radius: 3000
+  icon: mdi:briefcase
+
+- name: AptivSTC
+  latitude: 31.316416
+  longitude: 120.789773
+  radius: 1000
+  icon: mdi:briefcase

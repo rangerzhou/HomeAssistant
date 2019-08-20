@@ -1,0 +1,114 @@
+# Device info
+- platform: command_line
+  name: CPU Temperature zone0
+  command: cat /sys/class/thermal/thermal_zone0/temp
+  unit_of_measurement: °C
+  value_template: '{{ value | multiply(0.001) }}'
+- platform: command_line
+  name: CPU Temperature zone1
+  command: cat /sys/class/thermal/thermal_zone1/temp
+  unit_of_measurement: °C
+  value_template: '{{ value | multiply(0.001) }}'
+- platform: command_line
+  name: CPU Temperature zone2
+  command: cat /sys/class/thermal/thermal_zone2/temp
+  unit_of_measurement: °C
+  value_template: '{{ value | multiply(0.001) }}'
+- platform: systemmonitor
+  resources:
+    - type: memory_use_percent
+    - type: memory_use
+    - type: memory_free
+    - type: load_5m
+    - type: processor_use
+    - type: last_boot
+
+# HomeAssistant version
+- platform: command_line
+  command: >-
+    python3 -c "import requests;
+    print(requests.get('https://pypi.python.org/pypi/homeassistant/json').json()['info']['version'])"
+  name: HA release
+
+# gaode_travel_time
+- platform: gaode_travel_time
+  api_key: 2eec41586a85b251d7e872c536ef41e2
+  name: Walking to Aptiv
+  friendly_name: 步行去公司
+  travel_mode: walking
+  strategy: 0
+  origin:
+    city: 上海
+    address: 车站北路727弄
+  destination:
+    city: 上海
+    address: 德林路118号
+- platform: gaode_travel_time
+  api_key: 2eec41586a85b251d7e872c536ef41e2
+  name: Bicycling to Aptiv
+  friendly_name: 骑车去公司
+  travel_mode: bicycling
+  strategy: 0
+  origin:
+    city: 上海
+    address: 车站北路727弄
+  destination:
+    city: 上海
+    address: 德林路118号
+- platform: gaode_travel_time
+  api_key: 2eec41586a85b251d7e872c536ef41e2
+  name: Driving to Aptiv
+  friendly_name: 开车去公司
+  travel_mode: driving
+  strategy: 0
+  origin:
+    city: 上海
+    address: 车站北路727弄
+  destination:
+    city: 上海
+    address: 德林路118号
+- platform: gaode_travel_time
+  api_key: 2eec41586a85b251d7e872c536ef41e2
+  name: Driving to Home
+  friendly_name: 开车回家
+  travel_mode: driving
+  strategy: 0
+  origin:
+    city: 上海
+    address: 德林路118号
+  destination:
+    city: 上海
+    address: 车站北路727弄
+
+# 聚合数据
+#- platform: juhe_stock
+#  key: be0ed0f8d39f2138131c4447d405fdd5
+#  symbols:
+#    - aptv
+#    - dlph
+#    - goog
+#    - aapl
+#    - baba
+#    - hk00700
+#    - hk01810
+#    - hk03690
+#    - sh000001
+#    - sz000002
+#    - sh600600
+#    - sh600895
+- platform: juhe_joke
+  key: 8ad9dbb7d43528138e6ad32bb3a1714f
+
+# websocket_api
+#- platform: websocket_api
+
+- platform: command_line
+  command: echo "HA Check"
+  name: HACheck
+- platform: command_line
+  command: echo "HA Restart"
+  name: HARestart
+
+- platform: command_line
+  command: echo "Listening"
+  name: DeviceMonitor

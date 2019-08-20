@@ -1,0 +1,107 @@
+- id: WeatherForecast
+  alias: 天气播报
+  trigger:
+  - at: 08:30
+    platform: time
+  condition: []
+  action:
+  - service: tts.google_translate_say
+    data_template:
+      message: 室外温度{{ states.sensor.heweather_temperature.state}}°C, 室外湿度{{ states.sensor.heweather_humidity.state}}%,
+        PM25{{states.sensor.heweather_pm25.state}}μg/m3, 风速{{ states.weather.shanghai.attributes["wind_speed"]
+        }}km/h, {{states.sensor.remind.state}}, 祝您生活愉快
+- id: GoogleCalendar
+  alias: 谷歌日历
+  trigger:
+  - entity_id: calendar.ranger_assist_gmail_com
+    from: 'off'
+    platform: state
+    to: 'on'
+  - entity_id: calendar.important_event
+    from: 'off'
+    platform: state
+    to: 'on'
+  - platform: template
+    value_template: '{% if is_state_attr(''calendar.important_event'', ''offset_reached'',
+      true) %}true{% endif %}'
+  condition: []
+  action:
+  - service: tts.google_translate_say
+    data:
+      message: 有新的日程啦
+  - service: notify.pushover
+    data_template:
+      message: '{{ states.calendar.ranger_assist_gmail_com.attributes["message"] }},{{
+        states.calendar.ranger_assist_gmail_com.attributes["description"] }},{{ states.calendar.ranger_assist_gmail_com.attributes["location"]
+        }},{{ states.calendar.ranger_assist_gmail_com.attributes["start_time"] }},{{
+        states.calendar.ranger_assist_gmail_com.attributes["end_time"] }}'
+- id: HeWeather
+  alias: 和风生活建议
+  trigger:
+  - at: '17:30'
+    platform: time
+  condition: []
+  action:
+  - service: tts.google_translate_say
+    data_template:
+      message: 今天{{ states.sensor.suggestion_flu.state}}感冒，{{ states.sensor.suggestion_flu.attributes["建议"]
+        }}，此外今天{{ states.sensor.suggestion_uv.attributes["建议"] }}，祝您生活愉快
+- id: Device monitor
+  alias: 设备状态提醒
+  trigger:
+  - entity_id: sensor.devicemonitor
+    platform: state
+    to: PowerOff
+  condition:
+  - entity_id: calendar.huan_ying
+    condition: state
+    state: 'on'
+  action:
+  - service: tts.google_translate_say
+    data:
+      message: 家里的空气净化器未关闭，是否为您关闭？
+  - service: shell_command.push_notification
+    data_template:
+      message: 'FFFF,90010002,0,空气净化器'
+- id: testtest
+  alias: test
+  trigger:
+  - at: 08:30
+    platform: time
+  condition: []
+  action:
+  - service: shell_command.push_notification
+    data_template:
+      message: 'zhouranaaaaa,2,3,4,5'
+- id: HaHaPush
+  alias: 哈哈噗嘻
+  trigger:
+  - at: '10:00'
+    platform: time
+  - at: '14:00'
+    platform: time
+  - at: '15:00'
+    platform: time
+  - at: '16:00'
+    platform: time
+  - at: '17:00'
+    platform: time
+  condition: []
+  action:
+  - service: notify.haha
+    data:
+      title: "麻麻我要喝水水(*^__^*) ……♪(^∇^*)"
+      message: news|天气{{states.weather.hefengtianqi.attributes["condition_cn"]}}\n室外温度{{states.sensor.heweather_temperature.state}}°C\n室外湿度{{states.sensor.heweather_humidity.state}}%
+        \nPM25 {{states.sensor.heweather_pm25.state}}μg/m3\n风速{{states.weather.shanghai.attributes["wind_speed"]}}km/h\n{{states.sensor.remind.state}}
+        \n祝您生活愉快！！！|https://raw.githubusercontent.com/rangerzhou/git_resource/master/blog_resource/wulei.jpg|https://raw.githubusercontent.com/rangerzhou/git_resource/master/blog_resource/baby.jpeg
+- id: HaHaXiaBan
+  alias: 哈哈下班
+  trigger:
+  - at: '18:00'
+    platform: time
+  condition: []
+  action:
+  - service: notify.haha
+    data:
+      title: "麻麻下班时间到了(*^__^*) ……♪(^∇^*)"
+      message: news|\n下班了，打倒老板娘，冲鸭！！！\n|https://raw.githubusercontent.com/rangerzhou/git_resource/master/blog_resource/wulei.jpg|https://raw.githubusercontent.com/rangerzhou/git_resource/master/blog_resource/baby.jpeg

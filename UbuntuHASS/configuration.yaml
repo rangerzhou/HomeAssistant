@@ -1,0 +1,112 @@
+homeassistant:
+  name: Aptiv
+  latitude: 31.326
+  longitude: 121.602273
+  elevation: 0
+  unit_system: metric
+  time_zone: Asia/Shanghai
+  customize: !include customize.yaml
+  packages: !include_dir_named packages
+  customize_glob:
+    '*.*':
+      custom_ui_state_card: state-card-custom-ui
+
+default_config:
+tts:
+  - platform: google_translate
+    language: zh-cn
+
+  - platform: baidu
+    app_id: !secret tts_baidu_app_id
+    api_key: !secret tts_baidu_api_key
+    secret_key: !secret tts_baidu_secret_key
+    person: 0
+automation: !include automations.yaml
+script: !include scripts.yaml
+sensor: !include sensor.yaml
+zone: !include zones.yaml
+redpoint:
+sun:
+media_player:
+  - platform: vlc
+    name: vlc_speaker
+  - platform: mpd  #设置播放平台为mpd
+    host: 127.0.0.1  #设置mpd所在主机地址，本例中mpd与Home Assistant运行于同一主机上
+weather:
+  - platform: darksky
+    api_key: !secret weather_darksky
+    name: 上海天气
+  - platform: openweathermap
+    api_key: !secret weather_openweathermap
+    name: Shanghai
+  - platform: hf_weather
+    name: hefengtianqi                  # entity_id，自定义
+    city: shanghai    # 城市代码，api平台有查询接口查询
+    appkey: !secret weather_hefeng_jd    # api平台申请的key
+google:
+  client_id: !secret google_client_id
+  client_secret: !secret google_client_secret
+#tunnel2local:
+#  frpc_bin: /home/ranger/.homeassistant/custom_components/tunnel2local/frpc
+timer:
+  timer001:
+    duration: '00:01:00'
+notify:
+  - platform: pushover
+    name: pushover
+    api_key: !secret notify_pushover_api_key
+    user_key: !secret notify_pushover_user_key
+  - platform: notify_wechat_qy
+    name: weixin_qiye
+    corpid: !secret notify_notify_wechat_qy_corpid
+    agentId: !secret notify_notify_wechat_qy_agentId
+    secret: !secret notify_notify_wechat_qy_secret
+    touser: '@all'
+  - platform: notify_haha
+    name: haha
+    corpid: !secret notify_notify_haha_corpid
+    agentId: !secret notify_notify_haha_agentId
+    secret: !secret notify_notify_haha_secret
+    touser: '@all'
+  - platform: command_line
+    name: cmdpush
+    command: "touch {{ value }}"
+  # pushbear
+#  - platform: serverchan
+#    name: pushbear
+#    sc_key: 2111-SCU57869T4b778ee55aa395533d7065e1dca734365d5b4d5f64528
+   # Serverchan 老版本
+  - platform: notify_wechat
+    name: weixin
+    sc_key: !secret notify_serverchan_sc_key
+
+
+#calendar:
+#  - platform: todoist
+#    token: !secret calendar_todoist_token
+api:
+frontend:
+  extra_html_url:
+    - /local/custom_ui/state-card-custom-ui.html
+  extra_html_url_es5:
+    - /local/custom_ui/state-card-custom-ui-es5.html
+panel_iframe:
+  materialdesignicons:
+    title: Icons
+    icon: 'mdi:material-ui'
+    url: 'https://cdn.materialdesignicons.com/3.6.95'
+  hass:
+    title: Hassbian
+    icon: 'mdi:forum'
+    url: 'https://bbs.hassbian.com/forum-38-1.html'
+  homeassistant:
+    title: HA.io
+    icon: 'mdi:home-assistant'
+    url: 'https://www.home-assistant.io/'
+hacs:
+  token: !secret hacs_token
+#websocket_api:
+http:
+shell_command:
+  # ws.send(destination + "," + code + "," + data + "," + payload)
+  push_notification: /usr/bin/node /home/ranger/.homeassistant/www/client.js {{message}}

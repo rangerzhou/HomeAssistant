@@ -1,0 +1,40 @@
+
+- cal_id: ranger.assist@gmail.com
+  entities:
+  - device_id: ranger_assist_gmail_com
+    ignore_availability: true
+    name: ranger.assist@gmail.com
+    track: true
+  - device_id: important_event
+    name: Important Stuff
+    track: true
+    offset: "!!"
+
+- cal_id: addressbook#contacts@group.v.calendar.google.com
+  entities:
+  - device_id: contacts
+    ignore_availability: true
+    name: Contacts
+    track: true
+
+- cal_id: en.usa#holiday@group.v.calendar.google.com
+  entities:
+  - device_id: holidays_in_united_states
+    ignore_availability: true
+    name: Holidays in United States
+    track: true
+
+- cal_id: zh-cn.china#holiday@group.v.calendar.google.com
+  entities:
+  - device_id: zhong_guo_jie_jia_ri
+    ignore_availability: true
+    name: "\u4E2D\u56FD\u8282\u5047\u65E5"
+    track: true
+
+
+- cal_id: p4ldkpksj1a6pflhqr5lpfd6io@group.calendar.google.com
+  entities:
+  - device_id: todoist
+    ignore_availability: true
+    name: Todoist
+    track: true

@@ -1,0 +1,79 @@
+sensor:
+  - platform: heweather
+    city: shanghai
+    appkey: 905195741bfe46e9de5743627c7f781d
+    options:
+      - temprature
+      - humidity
+      - pm25
+      - no2
+      - so2
+      - co
+      - o3
+      - qlty
+
+  - platform: heweather_hourlyforecast
+    city: shanghai
+    appkey: 905195741bfe46e9de5743627c7f781d
+    options:
+      - remind
+      - 3hour
+      - 6hour
+      - 9hour
+
+  - platform: lifesuggestion
+    city: shanghai
+    appkey: 905195741bfe46e9de5743627c7f781d
+    options:
+      - air
+      - comf
+      - cw
+      - drsg
+      - flu
+      - sport
+      - trav
+      - uv
+
+weather:
+    - platform: heweather_forecast
+      city: shanghai
+      appkey: 905195741bfe46e9de5743627c7f781d
+
+group:
+  weather:
+    view: no
+    name: 本地天气
+    entities:
+      - weather.localweather
+  heweatherAQI:
+    view: no
+    name: 本地空气质量
+    entities:
+      #- sensor.sensor.heweather_humidity
+      #- sensor.heweather_temperature
+      - sensor.heweather_qlty
+      - sensor.heweather_no2
+      - sensor.heweather_pm25
+      - sensor.heweather_co
+      - sensor.heweather_so2
+      - sensor.heweather_o3
+  hourlyforecast:
+    view: no
+    name: 小时天气预报
+    entities:
+      - sensor.remind
+      - sensor.hourly_forcast_3
+      - sensor.hourly_forcast_6
+      - sensor.hourly_forcast_9
+  suggestion:
+    view: no
+    name: 品质生活
+    entities:
+      - sensor.suggestion_air
+      - sensor.suggestion_comf
+      - sensor.suggestion_cw
+      - sensor.suggestion_drsg
+      - sensor.suggestion_flu
+      - sensor.suggestion_sport
+      - sensor.suggestion_trav
+      - sensor.suggestion_uv
