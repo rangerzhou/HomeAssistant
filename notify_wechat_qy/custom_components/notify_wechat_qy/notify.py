@@ -3,6 +3,7 @@ Qiyeweichat
 {"title":"Homeassistant","message":"text|内容"}
 {"title":"Homeassistant","message":"news|内容|打开链接|图片链接"}
 {"title":"Homeassistant","message":"textcard|内容|打开链接"}
+{"title":"Homeassistant","message":"image|内容|图片链接"}
 {"title":"Homeassistant","message":"video|内容|mp4本地地址"}
 """
 
