@@ -8,13 +8,13 @@ Server 酱介绍：http://sc.ftqq.com/3.version
 
 - 绑定微信：http://sc.ftqq.com/?c=wechat&a=bind
 
-- 下载 `__init__.py` 和 `notify.py` ，放入 `homeassistant/custom_components/serverchan` 目录下
+- 下载 `__init__.py` 和 `notify.py` ，放入 `homeassistant/custom_components/notify_wechat` 目录下
 
 - 配置 configurations.yaml
 
   ``` yaml
   notify:
-    - platform: serverchan
+    - platform: notify_wechat
       name: weixin
       sc_key: !secret notify_serverchan_sc_key
   ```

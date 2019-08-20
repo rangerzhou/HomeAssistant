@@ -5,8 +5,8 @@
 ### 配置 configurations.yaml
 
 ``` yaml
-  - platform: Qiyewechat
-    name: wechatnotify 			# 用于生成服务实体 ID, 比如这个出来就是 notify.wechatnotify
+  - platform: notify_wechat_qy
+    name: weixin_qiye 			# 用于生成服务实体 ID, 比如这个出来就是 notify.weixin_qiye
     corpid: wwa41ea8577b1540de 	# 这个是企业微信的企业 id
     agentId: 1000002 			# 这个是企业微信里面新建应用的应用 id
     secret: MLTkB-unJOPsdEWeTVcQuPFcHM50EcbA2ReovukKNbc # 这个是企业微信里面新建应用的应用 secret
@@ -16,7 +16,7 @@
 ### 调用服务
 
 ``` yaml
-- service: notify.weixin_quanjia
+- service: notify.weixin_qiye
   data:
     title: "标题"
     message: "类型|内容1|内容2|内容3"   
