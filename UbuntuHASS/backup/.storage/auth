@@ -1,0 +1,88 @@
+{
+    "data": {
+        "credentials": [
+            {
+                "auth_provider_id": null,
+                "auth_provider_type": "homeassistant",
+                "data": {
+                    "username": "rangerzhou"
+                },
+                "id": "5797704519414feb9fb10271fcb84f77",
+                "user_id": "98b8405dd20343f6bdc721ee4eb658c3"
+            },
+            {
+                "auth_provider_id": null,
+                "auth_provider_type": "homeassistant",
+                "data": {
+                    "username": "test"
+                },
+                "id": "f4d0e80992514e7ea2ffa8e74034ed18",
+                "user_id": "c7c70fe0e75a4486aad2d2be01cec82a"
+            }
+        ],
+        "groups": [
+            {
+                "id": "system-admin",
+                "name": "Administrators"
+            },
+            {
+                "id": "system-users",
+                "name": "Users"
+            },
+            {
+                "id": "system-read-only",
+                "name": "Read Only"
+            }
+        ],
+        "refresh_tokens": [
+            {
+                "access_token_expiration": 315360000.0,
+                "client_icon": null,
+                "client_id": null,
+                "client_name": "aptiv",
+                "created_at": "2019-06-12T08:01:36.572123+00:00",
+                "id": "8f7514439a16419c9cfcb941644351a8",
+                "jwt_key": "908d6b290d8f592ac3099bf00b47b921fd1f35e0bd062639cf9ef10fb7fcf7919604811b4db1da228c7ee320394197b4a940f536567094b811265aa77322fdbf",
+                "last_used_at": "2019-06-12T08:01:36.572225+00:00",
+                "last_used_ip": null,
+                "token": "91eb5d85da018a31484bd88e6cf7d981e4a18a3ba0d8bddc9bc04a99d4967b7fb3d15e882bc1359103d5f6417ba366c1240083689835dfffe8e0c5eb59b4bade",
+                "token_type": "long_lived_access_token",
+                "user_id": "98b8405dd20343f6bdc721ee4eb658c3"
+            }
+        ],
+        "users": [
+            {
+                "group_ids": [
+                    "system-admin"
+                ],
+                "id": "d8e5f8f2e79f489b90abe2b6afdb22d3",
+                "is_active": true,
+                "is_owner": false,
+                "name": "Home Assistant Cloud",
+                "system_generated": true
+            },
+            {
+                "group_ids": [
+                    "system-admin"
+                ],
+                "id": "98b8405dd20343f6bdc721ee4eb658c3",
+                "is_active": true,
+                "is_owner": true,
+                "name": "rangerzhou",
+                "system_generated": false
+            },
+            {
+                "group_ids": [
+                    "system-admin"
+                ],
+                "id": "c7c70fe0e75a4486aad2d2be01cec82a",
+                "is_active": true,
+                "is_owner": false,
+                "name": "test",
+                "system_generated": false
+            }
+        ]
+    },
+    "key": "auth",
+    "version": 1
+}

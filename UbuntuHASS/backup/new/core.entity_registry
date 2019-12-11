@@ -1,0 +1,17 @@
+{
+    "data": {
+        "entities": [
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "person.aptiv",
+                "name": null,
+                "platform": "person",
+                "unique_id": "c034584ffeff40678429d8dda3243762"
+            }
+        ]
+    },
+    "key": "core.entity_registry",
+    "version": 1
+}

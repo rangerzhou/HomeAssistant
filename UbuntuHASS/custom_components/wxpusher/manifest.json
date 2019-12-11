@@ -1,0 +1,8 @@
+{
+  "domain": "wxpusher",
+  "name": "wxpusher",
+  "documentation": "微信推送",
+  "requirements": [],
+  "dependencies": [],
+  "codeowners": ["xz0609@126.com"]
+}

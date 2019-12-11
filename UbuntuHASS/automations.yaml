@@ -1,7 +1,7 @@
 - id: WeatherForecast
   alias: 天气播报
   trigger:
-  - at: 08:30
+  - at: 02:30
     platform: time
   condition: []
   action:
@@ -38,7 +38,7 @@
 - id: HeWeather
   alias: 和风生活建议
   trigger:
-  - at: '17:30'
+  - at: '03:30'
     platform: time
   condition: []
   action:
@@ -72,7 +72,9 @@
   action:
   - service: shell_command.push_notification
     data_template:
-      message: 'zhouranaaaaa,2,3,4,5'
+      msg: 'FFFF,90010001,1,{"deviceName":"FengShan","state":"on"}'
+      #payload: '{"deviceName":"AirPureTest","state":"on"}'
+
 - id: HaHaPush
   alias: 哈哈噗嘻
   trigger:
@@ -81,7 +83,7 @@
   - at: '14:00'
     platform: time
   - at: '15:00'
-    platform: time
+#    platform: time
   - at: '16:00'
     platform: time
   - at: '17:00'
@@ -91,9 +93,11 @@
   - service: notify.haha
     data:
       title: "麻麻我要喝水水(*^__^*) ……♪(^∇^*)"
-      message: news|天气{{states.weather.hefengtianqi.attributes["condition_cn"]}}\n室外温度{{states.sensor.heweather_temperature.state}}°C\n室外湿度{{states.sensor.heweather_humidity.state}}%
-        \nPM25 {{states.sensor.heweather_pm25.state}}μg/m3\n风速{{states.weather.shanghai.attributes["wind_speed"]}}km/h\n{{states.sensor.remind.state}}
-        \n祝您生活愉快！！！|https://raw.githubusercontent.com/rangerzhou/git_resource/master/blog_resource/wulei.jpg|https://raw.githubusercontent.com/rangerzhou/git_resource/master/blog_resource/baby.jpeg
+      message: news|\n当前天气 {{states.weather.hefengtianqi.attributes["condition_cn"]}}\n室外温度 {{states.sensor.heweather_temperature.state}}°C
+        \n室外湿度 {{states.sensor.heweather_humidity.state}}%\n风速 {{states.weather.shanghai.attributes["wind_speed"]}}km/h
+        \nPM25 {{states.sensor.heweather_pm25.state}}μg/m3\n未来3小时 {{states.sensor.hourly_forcast_3.state}}
+        \n未来6小时 {{states.sensor.hourly_forcast_6.state}}\n未来9小时 {{states.sensor.hourly_forcast_9.state}}
+        \n{{states.sensor.remind.state}}\n祝您生活愉快！！！\n|https://raw.githubusercontent.com/rangerzhou/git_resource/master/blog_resource/wulei.jpg|https://raw.githubusercontent.com/rangerzhou/git_resource/master/blog_resource/baby.jpeg
 - id: HaHaXiaBan
   alias: 哈哈下班
   trigger:
@@ -105,3 +109,19 @@
     data:
       title: "麻麻下班时间到了(*^__^*) ……♪(^∇^*)"
       message: news|\n下班了，打倒老板娘，冲鸭！！！\n|https://raw.githubusercontent.com/rangerzhou/git_resource/master/blog_resource/wulei.jpg|https://raw.githubusercontent.com/rangerzhou/git_resource/master/blog_resource/baby.jpeg
+
+- id: HaHaSleep
+  alias: 哈哈休息
+  trigger:
+  - at: '23:00'
+    platform: time
+  condition: []
+  action:
+  - service: notify.haha
+    data:
+      title: "睡觉觉睡觉觉，尿个尿尿睡觉觉(*^__^*) ……♪(^∇^*)"
+      message: news|\n当前天气 {{states.weather.hefengtianqi.attributes["condition_cn"]}}\n室外温度 {{states.sensor.heweather_temperature.state}}°C
+        \n室外湿度 {{states.sensor.heweather_humidity.state}}%\n风速 {{states.weather.shanghai.attributes["wind_speed"]}}km/h
+        \nPM25 {{states.sensor.heweather_pm25.state}}μg/m3\n未来3小时 {{states.sensor.hourly_forcast_3.state}}
+        \n未来6小时 {{states.sensor.hourly_forcast_6.state}}\n未来9小时 {{states.sensor.hourly_forcast_9.state}}
+        \n{{states.sensor.remind.state}}\n晚安好梦哦！！！\n|https://raw.githubusercontent.com/rangerzhou/git_resource/master/blog_resource/wulei.jpg|https://raw.githubusercontent.com/rangerzhou/git_resource/master/blog_resource/baby.jpeg

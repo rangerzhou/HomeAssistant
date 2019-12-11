@@ -1,0 +1,17 @@
+{
+    "data": {
+        "entities": [
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "person.rangerzhou",
+                "name": null,
+                "platform": "person",
+                "unique_id": "0fa36b772d2b442c9759f0951b97079f"
+            }
+        ]
+    },
+    "key": "core.entity_registry",
+    "version": 1
+}

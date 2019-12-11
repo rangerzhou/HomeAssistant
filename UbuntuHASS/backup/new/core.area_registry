@@ -1,0 +1,20 @@
+{
+    "data": {
+        "areas": [
+            {
+                "id": "2de1b786211b4a8cac52c82f2d247c62",
+                "name": "\u5ba2\u5385"
+            },
+            {
+                "id": "00a6fb3c2a8e4c17b6f155da57c84013",
+                "name": "\u53a8\u623f"
+            },
+            {
+                "id": "a716c8ad2a204997b23bdc6208db66f2",
+                "name": "\u5367\u5ba4"
+            }
+        ]
+    },
+    "key": "core.area_registry",
+    "version": 1
+}

@@ -68,9 +68,13 @@ notify:
     agentId: !secret notify_notify_haha_agentId
     secret: !secret notify_notify_haha_secret
     touser: '@all'
+  - platform: wxpusher
+    name: weixin_wxpusher
+    userIds: !secret notify_wxpusher_userIds
   - platform: command_line
     name: cmdpush
     command: "touch {{ value }}"
+
   # pushbear
 #  - platform: serverchan
 #    name: pushbear
@@ -78,8 +82,7 @@ notify:
    # Serverchan 老版本
   - platform: notify_wechat
     name: weixin
-    sc_key: !secret notify_serverchan_sc_key
-
+    sc_key: !secret notify_notify_wechat_sc_key
 
 #calendar:
 #  - platform: todoist
@@ -90,6 +93,7 @@ frontend:
     - /local/custom_ui/state-card-custom-ui.html
   extra_html_url_es5:
     - /local/custom_ui/state-card-custom-ui-es5.html
+  themes: !include themes.yaml
 panel_iframe:
   materialdesignicons:
     title: Icons
@@ -100,7 +104,7 @@ panel_iframe:
     icon: 'mdi:forum'
     url: 'https://bbs.hassbian.com/forum-38-1.html'
   homeassistant:
-    title: HA.io
+    title: HA.ioo
     icon: 'mdi:home-assistant'
     url: 'https://www.home-assistant.io/'
 hacs:
@@ -109,4 +113,6 @@ hacs:
 http:
 shell_command:
   # ws.send(destination + "," + code + "," + data + "," + payload)
-  push_notification: /usr/bin/node /home/ranger/.homeassistant/www/client.js {{message}}
+#  push_notification: /usr/bin/node /home/ranger/.homeassistant/www/client.js {{message}}
+  push_notification: /usr/bin/node /home/ranger/.homeassistant/www/client.js {{msg}}
+

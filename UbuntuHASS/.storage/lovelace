@@ -1,0 +1,514 @@
+{
+    "data": {
+        "config": {
+            "background": "center / cover no-repeat url(\"/local/background.jpg\") fixed",
+            "cch": {
+                "all_buttons_color": "white",
+                "all_tabs_color": "red",
+                "button_color": {
+                    "menu": "rgb(255,255,255)"
+                },
+                "clock_am_pm": false,
+                "clock_date": true,
+                "clock_format": "24",
+                "date_locale": "zh-CN",
+                "disable": true,
+                "notify_indicator_color": "#00FFFF",
+                "notify_text_color": "brown",
+                "swipe": true,
+                "tab_indicator_color": "red",
+                "voice": "clock"
+            },
+            "resources": [
+                {
+                    "type": "module",
+                    "url": "/local/custom-lovelace/hf_weather-card/hf_weather-card.js"
+                },
+                {
+                    "type": "module",
+                    "url": "/local/custom-lovelace/hf_weather-card/hf_weather-more-info.js"
+                },
+                {
+                    "type": "module",
+                    "url": "/local/custom_cards/canvas-gauge-card.js"
+                },
+                {
+                    "type": "module",
+                    "url": "/local/custom-lovelace/compact-custom-header/compact-custom-header.js?v=0.0.1"
+                },
+                {
+                    "type": "module",
+                    "url": "/community_plugin/compact-custom-header/compact-custom-header.js"
+                },
+                {
+                    "type": "js",
+                    "url": "/community_plugin/lovelace-swipe-navigation/swipe-navigation.js"
+                }
+            ],
+            "swipe_nav": {
+                "animate": "swipe",
+                "prevent_default": true,
+                "swipe_amount": 30,
+                "wrap": false
+            },
+            "title": "Aptiv",
+            "views": [
+                {
+                    "badges": [
+                        "person.aptiv",
+                        "sun.sun",
+                        "timer.timer001"
+                    ],
+                    "cards": [
+                        {
+                            "entities": [
+                                {
+                                    "entity": "automation.gu_ge_ri_li"
+                                },
+                                {
+                                    "entity": "automation.tian_qi_bo_bao"
+                                },
+                                {
+                                    "entity": "automation.he_feng_sheng_huo_jian_yi"
+                                },
+                                {
+                                    "entity": "automation.test"
+                                },
+                                {
+                                    "entity": "automation.she_bei_zhuang_tai_ti_xing"
+                                }
+                            ],
+                            "title": "\u81ea\u52a8\u5316",
+                            "type": "entities"
+                        },
+                        {
+                            "entity": "weather.hefengtianqi",
+                            "icons": "/local/custom-lovelace/hf_weather-card/icons/animated/",
+                            "title": "\u4e0a\u6d77\u5929\u6c14",
+                            "type": "custom:hf_weather-card"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "calendar.holidays_in_united_states"
+                                },
+                                {
+                                    "entity": "calendar.zhong_guo_jie_jia_ri"
+                                },
+                                {
+                                    "entity": "calendar.todoist"
+                                },
+                                {
+                                    "entity": "calendar.contacts"
+                                },
+                                {
+                                    "entity": "calendar.ranger_assist_gmail_com"
+                                },
+                                {
+                                    "entity": "calendar.important_event"
+                                }
+                            ],
+                            "title": "\u65e5\u5386",
+                            "type": "entities"
+                        },
+                        {
+                            "entity": "weather.shang_hai_tian_qi",
+                            "name": "\u4e0a\u6d77-DarkSky",
+                            "type": "weather-forecast"
+                        },
+                        {
+                            "entity": "weather.localweather",
+                            "name": "\u4e0a\u6d77-OpenWeather",
+                            "type": "weather-forecast"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "media_player.mpd"
+                                }
+                            ],
+                            "type": "entities"
+                        },
+                        {
+                            "entity": "media_player.vlc_speaker",
+                            "type": "media-control"
+                        },
+                        {
+                            "entity": "sensor.hacheck",
+                            "hold_action": {
+                                "action": "more-info"
+                            },
+                            "show_icon": true,
+                            "show_name": true,
+                            "tap_action": {
+                                "action": "call-service",
+                                "service": "homeassistant.check_config"
+                            },
+                            "type": "entity-button"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "icon": "mdi:router-wireless",
+                                    "name": "Internet Address",
+                                    "type": "weblink",
+                                    "url": "http://gql6xtry2m.hachina.802154.com"
+                                }
+                            ],
+                            "title": "\u7f51\u5740",
+                            "type": "entities"
+                        },
+                        {
+                            "entity": "sensor.harestart",
+                            "hold_action": {
+                                "action": "more-info"
+                            },
+                            "show_icon": true,
+                            "show_name": true,
+                            "tap_action": {
+                                "action": "call-service",
+                                "service": "homeassistant.restart"
+                            },
+                            "type": "entity-button"
+                        }
+                    ],
+                    "icon": "mdi:home",
+                    "path": "default_view",
+                    "title": "Home"
+                },
+                {
+                    "badges": [],
+                    "cards": [
+                        {
+                            "entities": [
+                                {
+                                    "entity": "sensor.walking_to_aptiv"
+                                },
+                                {
+                                    "entity": "sensor.bicycling_to_aptiv"
+                                },
+                                {
+                                    "entity": "sensor.driving_to_aptiv"
+                                },
+                                {
+                                    "entity": "sensor.driving_to_home"
+                                }
+                            ],
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "sensor.jokes"
+                                }
+                            ],
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "sensor.last_boot"
+                                },
+                                {
+                                    "entity": "sensor.load_5m"
+                                },
+                                {
+                                    "entity": "sensor.memory_free"
+                                },
+                                {
+                                    "entity": "sensor.memory_use"
+                                },
+                                {
+                                    "entity": "sensor.memory_use_percent"
+                                },
+                                {
+                                    "entity": "sensor.processor_use"
+                                },
+                                {
+                                    "entity": "sensor.cpu_temperature_zone0"
+                                },
+                                {
+                                    "entity": "sensor.cpu_temperature_zone1"
+                                },
+                                {
+                                    "entity": "sensor.cpu_temperature_zone2"
+                                },
+                                {
+                                    "entity": "sensor.ha_release"
+                                }
+                            ],
+                            "type": "entities"
+                        },
+                        {
+                            "card_height": 210,
+                            "entity": "sensor.processor_use",
+                            "font_size": "1em",
+                            "gauge": {
+                                "borders": false,
+                                "height": 220,
+                                "highlights": [
+                                    {
+                                        "color": "rgba(200, 50, 50, .75)",
+                                        "from": 80,
+                                        "to": 100
+                                    }
+                                ],
+                                "majorTicks": [
+                                    "0",
+                                    "10",
+                                    "20",
+                                    "30",
+                                    "40",
+                                    "50",
+                                    "60",
+                                    "70",
+                                    "80",
+                                    "90",
+                                    "100"
+                                ],
+                                "maxValue": 100,
+                                "minValue": 0,
+                                "minorTicks": 2,
+                                "startAngle": 40,
+                                "strokeTicks": true,
+                                "ticksAngle": 280,
+                                "type": "radial-gauge",
+                                "units": "%",
+                                "valueBox": false,
+                                "width": 220
+                            },
+                            "name": "Processor (%)",
+                            "shadow_height": "12%",
+                            "type": "custom:canvas-gauge-card"
+                        },
+                        {
+                            "entity": "sensor.bicycling_to_aptiv",
+                            "max": 100,
+                            "min": 0,
+                            "severity": {
+                                "green": 0,
+                                "red": 0,
+                                "yellow": 0
+                            },
+                            "theme": "default",
+                            "type": "gauge"
+                        },
+                        {
+                            "entity": "sensor.driving_to_aptiv",
+                            "max": 100,
+                            "min": 0,
+                            "severity": {
+                                "green": 0,
+                                "red": 0,
+                                "yellow": 0
+                            },
+                            "theme": "default",
+                            "type": "gauge"
+                        },
+                        {
+                            "entity": "sensor.driving_to_home",
+                            "max": 100,
+                            "min": 0,
+                            "severity": {
+                                "green": 0,
+                                "red": 0,
+                                "yellow": 0
+                            },
+                            "theme": "default",
+                            "type": "gauge"
+                        },
+                        {
+                            "entity": "sensor.hacheck",
+                            "hold_action": {
+                                "action": "more-info"
+                            },
+                            "show_icon": true,
+                            "show_name": true,
+                            "tap_action": {
+                                "action": "call-service",
+                                "service": "homeassistant.check_config"
+                            },
+                            "type": "entity-button"
+                        },
+                        {
+                            "entity": "sensor.harestart",
+                            "hold_action": {
+                                "action": "more-info"
+                            },
+                            "show_icon": true,
+                            "show_name": true,
+                            "tap_action": {
+                                "action": "call-service",
+                                "service": "homeassistant.restart"
+                            },
+                            "theme": "default",
+                            "type": "entity-button"
+                        }
+                    ],
+                    "icon": "mdi:information",
+                    "title": "Info"
+                },
+                {
+                    "badges": [],
+                    "cards": [
+                        {
+                            "entity": "weather.localweather",
+                            "name": "\u4e0a\u6d77\u5929\u6c14",
+                            "type": "weather-forecast"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "sensor.remind",
+                                    "name": "\u63d0\u9192"
+                                },
+                                {
+                                    "entity": "sensor.hourly_forcast_3",
+                                    "name": "\u672a\u6765 3 \u5c0f\u65f6"
+                                },
+                                {
+                                    "entity": "sensor.hourly_forcast_6",
+                                    "name": "\u672a\u6765 6 \u5c0f\u65f6"
+                                },
+                                {
+                                    "entity": "sensor.hourly_forcast_9",
+                                    "name": "\u672a\u6765 9 \u5c0f\u65f6"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "\u5c0f\u65f6\u5929\u6c14\u9884\u62a5",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "sensor.suggestion_air",
+                                    "name": "\u7a7a\u6c14\u8d28\u91cf"
+                                },
+                                {
+                                    "entity": "sensor.suggestion_comf",
+                                    "name": "\u4f53\u611f"
+                                },
+                                {
+                                    "entity": "sensor.suggestion_cw",
+                                    "name": "\u6d17\u8f66\u5efa\u8bae"
+                                },
+                                {
+                                    "entity": "sensor.suggestion_drsg",
+                                    "name": "\u8863\u7740\u5efa\u8bae"
+                                },
+                                {
+                                    "entity": "sensor.suggestion_flu",
+                                    "name": "\u611f\u5192\u6982\u7387"
+                                },
+                                {
+                                    "entity": "sensor.suggestion_sport",
+                                    "name": "\u8fd0\u52a8\u5efa\u8bae"
+                                },
+                                {
+                                    "entity": "sensor.suggestion_trav",
+                                    "name": "\u65c5\u884c\u5efa\u8bae"
+                                },
+                                {
+                                    "entity": "sensor.suggestion_uv",
+                                    "name": "\u9632\u6652\u5efa\u8bae"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "\u54c1\u8d28\u751f\u6d3b",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "sensor.heweather_qlty",
+                                    "name": "\u7efc\u5408\u7a7a\u6c14\u8d28\u91cf"
+                                },
+                                {
+                                    "entity": "sensor.heweather_no2",
+                                    "name": "\u4e8c\u6c27\u5316\u6c2e"
+                                },
+                                {
+                                    "entity": "sensor.heweather_pm25",
+                                    "name": "PM2.5"
+                                },
+                                {
+                                    "entity": "sensor.heweather_co",
+                                    "name": "\u4e00\u6c27\u5316\u78b3"
+                                },
+                                {
+                                    "entity": "sensor.heweather_so2",
+                                    "name": "\u4e8c\u6c27\u5316\u786b"
+                                },
+                                {
+                                    "entity": "sensor.heweather_o3",
+                                    "name": "\u81ed\u6c27"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "\u672c\u5730\u7a7a\u6c14\u8d28\u91cf",
+                            "type": "entities"
+                        },
+                        {
+                            "card_height": 210,
+                            "entity": "sensor.heweather_temperature",
+                            "font_size": "1em",
+                            "gauge": {
+                                "animationDuration": 1500,
+                                "animationRule": "linear",
+                                "barWidth": 10,
+                                "borderShadowWidth": 0,
+                                "borders": false,
+                                "colorPlate": "#fff",
+                                "height": 400,
+                                "highlights": [
+                                    {
+                                        "color": "rgba(200, 50, 50, .75)",
+                                        "from": 100,
+                                        "to": 220
+                                    }
+                                ],
+                                "majorTicks": [
+                                    "0",
+                                    "5",
+                                    "10",
+                                    "15",
+                                    "20",
+                                    "25",
+                                    "30",
+                                    "35",
+                                    "40",
+                                    "45"
+                                ],
+                                "maxValue": 45,
+                                "minValue": 0,
+                                "minorTicks": 2,
+                                "needleCircleInner": false,
+                                "needleCircleOuter": true,
+                                "needleCircleSize": 7,
+                                "needleType": "arrow",
+                                "needleWidth": 2,
+                                "renderTo": "canvas-id",
+                                "startAngle": 90,
+                                "strokeTicks": true,
+                                "ticksAngle": 180,
+                                "type": "linear-gauge",
+                                "units": "\u00b0C",
+                                "value": 35,
+                                "valueBox": false,
+                                "width": 120
+                            },
+                            "name": "\u2103",
+                            "shadow_height": "12%",
+                            "type": "custom:canvas-gauge-card"
+                        }
+                    ],
+                    "icon": "mdi:weather-cloudy",
+                    "title": "HeWeather"
+                }
+            ]
+        }
+    },
+    "key": "lovelace",
+    "version": 1
+}

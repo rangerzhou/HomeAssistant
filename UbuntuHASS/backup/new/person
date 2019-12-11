@@ -1,0 +1,14 @@
+{
+    "data": {
+        "persons": [
+            {
+                "device_trackers": [],
+                "id": "c034584ffeff40678429d8dda3243762",
+                "name": "Aptiv",
+                "user_id": "86676ceaface44f8ac50cbd0b0c88f48"
+            }
+        ]
+    },
+    "key": "person",
+    "version": 1
+}

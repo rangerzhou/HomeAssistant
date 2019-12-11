@@ -1,0 +1,16 @@
+{
+    "data": {
+        "users": [
+            {
+                "password": "JDJiJDEyJHJXRkN6QWtHVlZkbUQ1cmM1NTJpVHVranJBRVJKTXJxTFhZQ0JZZzJZSTNvZXlINjNncUpX",
+                "username": "rangerzhou"
+            },
+            {
+                "password": "JDJiJDEyJHF3b3d3YkxjUm1BUDlSMWpxUUdzZC42a3hXcU9mTG02c0c4S2I3RlBqVVhjclpMUHI4bUJ5",
+                "username": "test"
+            }
+        ]
+    },
+    "key": "auth_provider.homeassistant",
+    "version": 1
+}

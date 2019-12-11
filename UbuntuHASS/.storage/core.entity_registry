@@ -1,0 +1,44 @@
+{
+    "data": {
+        "entities": [
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "person.aptiv",
+                "name": null,
+                "platform": "person",
+                "unique_id": "8177f59f7d274549b6898b0eaeb48237"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "binary_sensor.updater",
+                "name": null,
+                "platform": "updater",
+                "unique_id": "updater"
+            },
+            {
+                "config_entry_id": null,
+                "device_id": null,
+                "disabled_by": null,
+                "entity_id": "sensor.hacs",
+                "name": null,
+                "platform": "hacs",
+                "unique_id": "0717a0cd-745c-48fd-9b16-c8534c9704f9-bc944b0f-fd42-4a58-a072-ade38d1444cd"
+            },
+            {
+                "config_entry_id": "1c43d5671b8e480c9903336f86116922",
+                "device_id": "c28c51a8344b43ce8dfc9621b1ba4e9d",
+                "disabled_by": null,
+                "entity_id": "device_tracker.mi_6x",
+                "name": null,
+                "platform": "mobile_app",
+                "unique_id": "faf53164f7f948c29cd1f2d3dff7eea1"
+            }
+        ]
+    },
+    "key": "core.entity_registry",
+    "version": 1
+}

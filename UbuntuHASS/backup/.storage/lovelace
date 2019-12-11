@@ -1,0 +1,276 @@
+{
+    "data": {
+        "config": {
+            "cards": [
+                {
+                    "backdrop": true,
+                    "entity": "weather.qing_dao",
+                    "name": " ",
+                    "type": "custom:simple-weather-card"
+                },
+                {
+                    "backdrop": {
+                        "day": "var(--primary-color)",
+                        "night": "#40445a"
+                    },
+                    "entity": "weather.qing_dao",
+                    "name": "\u9752\u5c9b",
+                    "type": "custom:simple-weather-card"
+                },
+                {
+                    "entity": "weather.qing_dao",
+                    "name": "\u9752\u5c9b",
+                    "type": "custom:simple-weather-card"
+                },
+                {
+                    "entity": "weather.qing_dao",
+                    "type": "weather-forecast"
+                }
+            ],
+            "resources": [
+                {
+                    "type": "module",
+                    "url": "/local/simple-weather-card.bundle.js?v=0.2.0"
+                }
+            ],
+            "title": "Aptiv",
+            "views": [
+                {
+                    "badges": [
+                        "person.rangerzhou",
+                        "sun.sun"
+                    ],
+                    "cards": [
+                        {
+                            "entity": "media_player.vlc_speaker",
+                            "type": "media-control"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "sun.sun"
+                                }
+                            ],
+                            "type": "entities"
+                        },
+                        {
+                            "entity": "weather.shang_hai_tian_qi",
+                            "name": "\u4e0a\u6d77 - darksky",
+                            "type": "weather-forecast"
+                        },
+                        {
+                            "entity": "weather.shanghai",
+                            "name": "\u4e0a\u6d77 - OpenWeather",
+                            "type": "weather-forecast"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "sensor.cpu_temperature_zone0"
+                                },
+                                {
+                                    "entity": "sensor.cpu_temperature_zone1"
+                                },
+                                {
+                                    "entity": "sensor.cpu_temperature_zone2"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "CPU Temperature",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "calendar.contacts"
+                                },
+                                {
+                                    "entity": "calendar.ranger_assist_gmail_com"
+                                },
+                                {
+                                    "entity": "calendar.zhong_guo_jie_jia_ri"
+                                },
+                                {
+                                    "entity": "calendar.holidays_in_united_states"
+                                },
+                                {
+                                    "entity": "group.calendar"
+                                },
+                                {
+                                    "entity": "calendar.important_event"
+                                }
+                            ],
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "sensor.jokes"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Jokes",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "weblink.internet_address"
+                                }
+                            ],
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "automation.gu_ge_ri_li"
+                                },
+                                {
+                                    "entity": "automation.tian_qi_bo_bao"
+                                }
+                            ],
+                            "title": "Automations",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "calendar.huan_ying"
+                                },
+                                {
+                                    "entity": "calendar.inbox"
+                                },
+                                {
+                                    "entity": "calendar.important_event"
+                                },
+                                {
+                                    "entity": "calendar.todoist"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "type": "entities"
+                        }
+                    ],
+                    "icon": "mdi:home",
+                    "path": "default_view",
+                    "title": "Home"
+                },
+                {
+                    "badges": [],
+                    "cards": [
+                        {
+                            "entities": [
+                                {
+                                    "entity": "sensor.processor_use"
+                                },
+                                {
+                                    "entity": "sensor.memory_use_percent"
+                                },
+                                {
+                                    "entity": "sensor.memory_use"
+                                },
+                                {
+                                    "entity": "sensor.memory_free"
+                                },
+                                {
+                                    "entity": "sensor.load_5m"
+                                },
+                                {
+                                    "entity": "sensor.last_boot"
+                                },
+                                {
+                                    "entity": "sensor.ha_release"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Device Info",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "sensor.aptv",
+                                    "name": "Aptiv"
+                                },
+                                {
+                                    "entity": "sensor.aapl",
+                                    "name": "Apple"
+                                },
+                                {
+                                    "entity": "sensor.goog",
+                                    "name": "Google"
+                                },
+                                {
+                                    "entity": "sensor.baba",
+                                    "name": "Alibaba"
+                                },
+                                {
+                                    "entity": "sensor.dlph",
+                                    "name": "Delphi"
+                                },
+                                {
+                                    "entity": "sensor.hk01810",
+                                    "name": "\u5c0f\u7c73"
+                                },
+                                {
+                                    "entity": "sensor.hk00700",
+                                    "name": "\u817e\u8baf"
+                                },
+                                {
+                                    "entity": "sensor.hk03690",
+                                    "name": "\u7f8e\u56e2"
+                                },
+                                {
+                                    "entity": "sensor.sh000001",
+                                    "name": "\u4e0a\u8bc1\u6307\u6570"
+                                },
+                                {
+                                    "entity": "sensor.sh600895",
+                                    "name": "\u5f20\u6c5f\u9ad8\u79d1"
+                                },
+                                {
+                                    "entity": "sensor.sh600600"
+                                },
+                                {
+                                    "entity": "sensor.sz000002"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Stoke",
+                            "type": "entities"
+                        }
+                    ],
+                    "icon": "mdi:information",
+                    "title": "DeviceInfo"
+                },
+                {
+                    "badges": [],
+                    "cards": [
+                        {
+                            "entities": [
+                                {
+                                    "entity": "sensor.walking_to_aptiv"
+                                },
+                                {
+                                    "entity": "sensor.bicycling_to_aptiv"
+                                },
+                                {
+                                    "entity": "sensor.driving_to_aptiv"
+                                },
+                                {
+                                    "entity": "sensor.driving_to_home"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "type": "entities"
+                        }
+                    ],
+                    "icon": "mdi:car",
+                    "title": "Car"
+                }
+            ]
+        }
+    },
+    "key": "lovelace",
+    "version": 1
+}

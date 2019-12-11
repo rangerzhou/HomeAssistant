@@ -31,8 +31,7 @@ CONF_APPKEY = "appkey"
 
 # 定义三个可选项：温度、湿度、PM2.5
 OPTIONS = {
-    "temprature": [
-        "Heweather_temperature", "室外温度", "mdi:thermometer", TEMP_CELSIUS],
+    "temprature": ["Heweather_temperature", "室外温度", "mdi:thermometer", TEMP_CELSIUS],
     "humidity": ["Heweather_humidity", "室外湿度", "mdi:water-percent", "%"],
     "pm25": ["Heweather_pm25", "PM2.5", "mdi:walk", "μg/m3"],
     "no2": ["Heweather_no2", "二氧化氮", "mdi:emoticon-dead", "μg/m3"],

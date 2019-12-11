@@ -1,0 +1,102 @@
+{
+    "data": [
+        {
+            "last_seen": "2019-06-17T06:22:10.104235+00:00",
+            "state": {
+                "attributes": {
+                    "editable": true,
+                    "friendly_name": "rangerzhou",
+                    "id": "0fa36b772d2b442c9759f0951b97079f",
+                    "user_id": "98b8405dd20343f6bdc721ee4eb658c3"
+                },
+                "context": {
+                    "id": "c085f05fbe5041d1a6ebf3132c7b6ff4",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "person.rangerzhou",
+                "last_changed": "2019-06-17T06:19:02.388113+00:00",
+                "last_updated": "2019-06-17T06:19:08.096462+00:00",
+                "state": "unknown"
+            }
+        },
+        {
+            "last_seen": "2019-06-17T06:22:10.104235+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "\u5929\u6c14\u64ad\u62a5",
+                    "id": "WeatherBroadcast",
+                    "last_triggered": "2019-06-17T05:43:28.245968+00:00"
+                },
+                "context": {
+                    "id": "fd0cdbb55c814723bc5be79f82dc9a84",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "automation.tian_qi_bo_bao",
+                "last_changed": "2019-06-17T06:19:02.388328+00:00",
+                "last_updated": "2019-06-17T06:19:02.388328+00:00",
+                "state": "on"
+            }
+        },
+        {
+            "last_seen": "2019-06-17T06:22:10.104235+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "\u8c37\u6b4c\u65e5\u5386",
+                    "id": "GoogleCalendar",
+                    "last_triggered": "2019-06-17T05:44:07.910798+00:00"
+                },
+                "context": {
+                    "id": "62820b49e81c406baec1551b77e51657",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "automation.gu_ge_ri_li",
+                "last_changed": "2019-06-17T06:19:02.388512+00:00",
+                "last_updated": "2019-06-17T06:19:02.388512+00:00",
+                "state": "on"
+            }
+        },
+        {
+            "last_seen": "2019-06-17T06:18:59.270797+00:00",
+            "state": {
+                "attributes": {
+                    "editable": true,
+                    "friendly_name": "Aptiv",
+                    "id": "c034584ffeff40678429d8dda3243762",
+                    "user_id": "86676ceaface44f8ac50cbd0b0c88f48"
+                },
+                "context": {
+                    "id": "a2ed70f575e845fba9f992ca03b89ff5",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "person.aptiv",
+                "last_changed": "2019-06-17T06:15:56.082273+00:00",
+                "last_updated": "2019-06-17T06:15:56.082273+00:00",
+                "state": "unknown"
+            }
+        },
+        {
+            "last_seen": "2019-06-17T05:24:26.621481+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "CalendarEvent",
+                    "last_triggered": "2019-06-14T09:20:38.151648+00:00"
+                },
+                "context": {
+                    "id": "e1533d769012465499a8e40c0726860d",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "automation.calendarevent",
+                "last_changed": "2019-06-17T05:22:58.585269+00:00",
+                "last_updated": "2019-06-17T05:22:58.585269+00:00",
+                "state": "on"
+            }
+        }
+    ],
+    "key": "core.restore_state",
+    "version": 1
+}
