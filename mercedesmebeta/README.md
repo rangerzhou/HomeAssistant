@@ -15,7 +15,19 @@ mercedesmebeta:
 
 重启 HA，之后会在 *~/homeassistant/deps/lib/python3.7/site-packages/* 下生成一个 *mercedesmejsonpy* 目录，也可以在通过命令 `sudo pip install mercedesmejsonpy` （https://pypi.org/project/mercedesmejsonpy/）安装。
 
+HA 启动后会弹出通知提示设置，点击设置若出现 Faulty query：
+``` Error
+Reason: invalid_redirect_uri
+Description: Mismatching redirect_uri.
 
+API-0000016c19aa1fe0-1069bd7c
+```
+则尝试在 https://developer.mercedes-benz.com/console 中 Regenerate key，
+并在 Configuration.yaml 中配置 http：
+```
+http:
+  base_url: 'http://raspberrypi.local:8123'
+```
 
 Simulator：https://car-simulator.developer.mercedes-benz.com/
 
