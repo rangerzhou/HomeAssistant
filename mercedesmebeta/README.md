@@ -29,6 +29,8 @@ http:
   base_url: 'http://raspberrypi.local:8123'
 ```
 
+注意树莓派时间是否正确，如果不正确可能会报错，修改时间：`sudo date -s "2019-12-16 14:40:50"`
+
 Simulator：https://car-simulator.developer.mercedes-benz.com/
 
 CONSOLE：https://developer.mercedes-benz.com/console
