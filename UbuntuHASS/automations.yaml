@@ -10,6 +10,7 @@
       message: 室外温度{{ states.sensor.heweather_temperature.state}}°C, 室外湿度{{ states.sensor.heweather_humidity.state}}%,
         PM25{{states.sensor.heweather_pm25.state}}μg/m3, 风速{{ states.weather.shanghai.attributes["wind_speed"]
         }}km/h, {{states.sensor.remind.state}}, 祝您生活愉快
+
 - id: GoogleCalendar
   alias: 谷歌日历
   trigger:
@@ -35,6 +36,7 @@
         states.calendar.ranger_assist_gmail_com.attributes["description"] }},{{ states.calendar.ranger_assist_gmail_com.attributes["location"]
         }},{{ states.calendar.ranger_assist_gmail_com.attributes["start_time"] }},{{
         states.calendar.ranger_assist_gmail_com.attributes["end_time"] }}'
+
 - id: HeWeather
   alias: 和风生活建议
   trigger:
@@ -46,6 +48,7 @@
     data_template:
       message: 今天{{ states.sensor.suggestion_flu.state}}感冒，{{ states.sensor.suggestion_flu.attributes["建议"]
         }}，此外今天{{ states.sensor.suggestion_uv.attributes["建议"] }}，祝您生活愉快
+
 - id: Device monitor
   alias: 设备状态提醒
   trigger:
@@ -63,41 +66,7 @@
   - service: shell_command.push_notification
     data_template:
       message: 'FFFF,90010002,0,空气净化器'
-- id: testtest
-  alias: test
-  trigger:
-  - at: 08:30
-    platform: time
-  condition: []
-  action:
-  - service: shell_command.push_notification
-    data_template:
-      msg: 'FFFF,90010001,1,{"deviceName":"FengShan","state":"on"}'
-      #payload: '{"deviceName":"AirPureTest","state":"on"}'
 
-- id: HaHaPush
-  alias: 哈哈噗嘻
-  trigger:
-  - at: '10:00'
-    platform: time
-  - at: '14:00'
-    platform: time
-  - at: '15:00'
-#    platform: time
-  - at: '16:00'
-    platform: time
-  - at: '17:00'
-    platform: time
-  condition: []
-  action:
-  - service: notify.haha
-    data:
-      title: "麻麻我要喝水水(*^__^*) ……♪(^∇^*)"
-      message: news|\n当前天气 {{states.weather.hefengtianqi.attributes["condition_cn"]}}\n室外温度 {{states.sensor.heweather_temperature.state}}°C
-        \n室外湿度 {{states.sensor.heweather_humidity.state}}%\n风速 {{states.weather.shanghai.attributes["wind_speed"]}}km/h
-        \nPM25 {{states.sensor.heweather_pm25.state}}μg/m3\n未来3小时 {{states.sensor.hourly_forcast_3.state}}
-        \n未来6小时 {{states.sensor.hourly_forcast_6.state}}\n未来9小时 {{states.sensor.hourly_forcast_9.state}}
-        \n{{states.sensor.remind.state}}\n祝您生活愉快！！！\n|https://raw.githubusercontent.com/rangerzhou/git_resource/master/blog_resource/wulei.jpg|https://raw.githubusercontent.com/rangerzhou/git_resource/master/blog_resource/baby.jpeg
 - id: HaHaXiaBan
   alias: 哈哈下班
   trigger:
@@ -125,3 +94,27 @@
         \nPM25 {{states.sensor.heweather_pm25.state}}μg/m3\n未来3小时 {{states.sensor.hourly_forcast_3.state}}
         \n未来6小时 {{states.sensor.hourly_forcast_6.state}}\n未来9小时 {{states.sensor.hourly_forcast_9.state}}
         \n{{states.sensor.remind.state}}\n晚安好梦哦！！！\n|https://raw.githubusercontent.com/rangerzhou/git_resource/master/blog_resource/wulei.jpg|https://raw.githubusercontent.com/rangerzhou/git_resource/master/blog_resource/baby.jpeg
+
+- id: HaHaPush
+  alias: 哈哈噗嘻
+  trigger:
+  - at: '10:00'
+    platform: time
+  - at: '14:00'
+    platform: time
+  - at: '15:00'
+    platform: time
+  - at: '16:00'
+    platform: time
+  - at: '17:00'
+    platform: time
+  condition: []
+  action:
+  - service: notify.haha
+    data:
+      title: "麻麻我要喝水水(*^__^*) ……♪(^∇^*)"
+      message: news|\n当前天气 {{states.weather.hefengtianqi.attributes["condition_cn"]}}\n室外温度 {{states.sensor.heweather_temperature.state}}°C
+        \n室外湿度 {{states.sensor.heweather_humidity.state}}%\n风速 {{states.weather.shanghai.attributes["wind_speed"]}}km/h
+        \nPM25 {{states.sensor.heweather_pm25.state}}μg/m3\n未来3小时 {{states.sensor.hourly_forcast_3.state}}
+        \n未来6小时 {{states.sensor.hourly_forcast_6.state}}\n未来9小时 {{states.sensor.hourly_forcast_9.state}}
+        \n{{states.sensor.remind.state}}\n祝您生活愉快！！！\n|https://raw.githubusercontent.com/rangerzhou/git_resource/master/blog_resource/wulei.jpg|https://raw.githubusercontent.com/rangerzhou/git_resource/master/blog_resource/baby.jpeg
