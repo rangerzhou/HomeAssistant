@@ -29,7 +29,27 @@ http:
   base_url: 'http://raspberrypi.local:8123'
 ```
 
-注意树莓派时间是否正确，如果不正确可能会报错，修改时间：`sudo date -s "2019-12-16 14:40:50"`
+注意树莓派时间是否正确，如果不正确可能会报错:
+```
+2019-12-19 11:59:27 ERROR (SyncWorker_11) [mercedesmejsonpy.controller] Connection failed with http code 401
+NoneType: None
+... ...
+2019-12-19 11:59:31 ERROR (MainThread) [homeassistant.setup] Error during setup of component mercedesmebeta
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/homeassistant/setup.py", line 156, in _async_setup_component
+    component.setup, hass, processed_config)  # type: ignore
+  File "/usr/lib/python3.7/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/pi/.homeassistant/custom_components/mercedesmebeta/__init__.py", line 165, in setup
+    mercedesme_api = Controller(auth_handler, scan_interval)
+  File "/home/pi/.homeassistant/deps/lib/python3.7/site-packages/mercedesmejsonpy/controller.py", line 156, in __init__
+    self.load_cars()
+  File "/home/pi/.homeassistant/deps/lib/python3.7/site-packages/mercedesmejsonpy/controller.py", line 183, in load_cars
+    for current_car in cars:
+TypeError: 'NoneType' object is not iterable
+
+```
+修改时间即可解决：`sudo date -s "2019-12-16 14:40:50"`
 
 Simulator：https://car-simulator.developer.mercedes-benz.com/
 
