@@ -19,6 +19,7 @@ from homeassistant.components.notify import (
     ATTR_MESSAGE, ATTR_TITLE, ATTR_DATA, ATTR_TARGET, PLATFORM_SCHEMA, BaseNotificationService)
 import homeassistant.helpers.config_validation as cv
 
+_LOGGER = logging.getLogger(__name__)
 
 CONF_CORPID = 'corpid'
 CONF_AGENTID = 'agentId'

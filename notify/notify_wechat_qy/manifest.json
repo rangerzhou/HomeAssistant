@@ -1,0 +1,14 @@
+{
+  "domain": "notify_wechat_qy",
+  "name": "weixin_qiye",
+  "config_flow": true,
+  "documentation": "https://bbs.hassbian.com/thread-7128-1-1.html",
+  "issue_tracker": "https://bbs.hassbian.com/thread-7128-1-1.html",
+  "requirements": [
+  ],
+  "dependencies": [],
+  "codeowners": [
+    "ranger"
+  ],
+  "version": "v1.1"
+}
