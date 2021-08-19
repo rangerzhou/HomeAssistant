@@ -67,6 +67,8 @@ class WeWorkNotificationService(BaseNotificationService):
             + self.get_access_token()
         )
         title = kwargs.get("title")
+        timestp = datetime.datetime.now()
+        sendtime = '{} {}'.format(timestp.strftime('%Y{y}%m{m}%d{d}').format(y='年', m='月', d='日'), timestp.strftime("%H:%M:%S"))
 
         data = kwargs.get("data") or {}
         msgtype = data.get("type", "text")
@@ -81,13 +83,13 @@ class WeWorkNotificationService(BaseNotificationService):
             content += message
             msg = {"content": content}
         elif msgtype == "textcard":
-            msg = {"title": title, "description": message, "url": url}
+            msg = {"title": title, "description": message + f"\r\n{sendtime}", "url": url}
         elif msgtype == "news":
             msg = {
                 "articles": [
                     {
                         "title": title,
-                        "description": message,
+                        "description": message + f"\r\n{sendtime}",
                         "url": url,
                         "picurl": picurl,
                     }
@@ -104,7 +106,7 @@ class WeWorkNotificationService(BaseNotificationService):
             re = json.loads(r.text)
             ree = re["media_id"]
             media_id = str(ree)
-            msg = {"media_id": media_id, "title": title, "description": message}
+            msg = {"media_id": media_id, "title": title, "description": message + f"\r\n{sendtime}"}
         else:
             raise TypeError("消息类型输入错误，请输入：text/textcard/news/video")
         send_values = {
