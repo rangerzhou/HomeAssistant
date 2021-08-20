@@ -1,0 +1,9 @@
+{
+  "domain": "wxpusher",
+  "name": "wxpusher",
+  "documentation": "微信推送",
+  "requirements": [],
+  "dependencies": [],
+  "codeowners": ["ranger.assist@gmail.com"],
+  "version": "v2.0"
+}
